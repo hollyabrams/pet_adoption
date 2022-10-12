@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Adopt Homepage{% endblock %}
+{% block content %}
+
+<h1 class="mt-2">Pets</h1>
+
+<div>
+    {% for pet in pets%}
+    <div class="col-3">
+        <img class="img-thumbnail mt-4" src="{{ pet.image_url() }}">
+        <a href="{{ url_for('edit_pet', pet_id=pet.id) }}">{{ pet.name }}</a>
+        {% if pet.available %} <b> is available!</b> {% endif %}
+    </div>
+    {% else %}
+    <div class="col-12">No pets available.</div>
+    {% endfor %}
+</div>
+
+<a class="btn btn-primary mt-4" href="{{ url_for('add_pet') }}">Add Pet</a>
+
+{% endblock %}

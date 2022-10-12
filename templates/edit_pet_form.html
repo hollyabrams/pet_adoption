@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<h1>{{ pet.name }}</h1>
+
+{% if pet.photo_url %}
+<img class="img-fluid" src="{{ pet.photo_url }}">
+{% endif %}
+
+<form method="POST">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+              <h3>Edit this pet</h3>
+              <form method="POST">
+                {% include 'form_template.html' %}
+                <button class="btn btn-success btn-lg mt-2">Submit</button>
+                <a href="/" class="btn btn-danger btn-lg mt-2">Go Back</a>
+              </form>
+          </div>
+        </div>
+      </div>
+</form>
+
+{% endblock %}

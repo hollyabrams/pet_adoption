@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Add Your Pet!{% endblock %}
+
+{% block content %} 
+
+<div class="container">
+
+  <h1 class="display-2 text-center">Add Pet</h1>
+
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <form method="POST">
+        {% include 'form_template.html' %}
+        <button class="btn btn-success btn-lg mt-4">Submit</button>
+        <a href="/" class="btn btn-danger btn-lg mt-4">Go Back</a>
+      </form>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
